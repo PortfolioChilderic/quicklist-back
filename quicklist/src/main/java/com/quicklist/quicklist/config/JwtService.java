@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.UUID;
 
@@ -17,9 +19,10 @@ import java.util.UUID;
 public class JwtService {
     private final SecretKey secretKey;
 
-    public JwtService(@Value("${jwt.secret.key}") String secret) {
+    public JwtService(@Value("${jwt.secret.key}") String secretFilePath) {
         try {
-            if (secret == null || secret.isEmpty()) {
+            String secret = new String(Files.readAllBytes(Paths.get(secretFilePath))).trim();
+            if (secret.isEmpty()) {
                 throw new IllegalArgumentException("La clé secrète ne peut pas être vide");
             }
             this.secretKey = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
