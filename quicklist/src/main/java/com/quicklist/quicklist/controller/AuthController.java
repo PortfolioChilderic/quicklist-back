@@ -4,7 +4,6 @@ import com.quicklist.quicklist.config.JwtService;
 import com.quicklist.quicklist.domain.User;
 import com.quicklist.quicklist.dto.AuthRequest;
 import com.quicklist.quicklist.dto.AuthResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
