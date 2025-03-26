@@ -12,7 +12,7 @@
 	<artifactId>quicklist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>quicklist</name>
-	<description>QuickList est le backend de la plateforme de petites annonces, développé avec **Spring Boot** et **MariaDB**.</description>
+	<description>QuickList est le backend de la plateforme de petites annonces, développé avec **Spring Boot** et **MySQL**.</description>
 	<url/>
 	<licenses>
 		<license/>
